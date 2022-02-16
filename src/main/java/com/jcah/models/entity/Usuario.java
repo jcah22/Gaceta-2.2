@@ -22,6 +22,8 @@ public  class Usuario implements Serializable {
 	@NotNull
 	private String apellido_materno;
 
+	private boolean nuevoIngreso;
+
 	private String foto;
 
 	@Temporal(TemporalType.DATE)

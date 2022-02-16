@@ -283,56 +283,11 @@
 	</div>
 	<br>
 
-	<div class="container">
-		<h2 style="color: #bd2130;"
-			class="text-center font-italic  border-top-0  border-bottom border-end-0 border-start-0 mt-5  border border-dark font-weight-bold">
-			Nuevos
-			Ingresos</h2>
+	
 
-		<div id="ingresos" class="wrapper row align-items-center text-center ">
+	<br><br>
 
-			<div class="single-team col">
-				<div class="box img1"></div>
-				<div class="box img-text">
-					<div class="text-area text-center">
-						<h4>Lizbet Crescencio Sanchez</h4>
-						<hr>
-
-						<h5>Recepción</h5>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="single-team col">
-				<div class="box img2"></div>
-				<div class="box img-text">
-					<div class="text-area text-center">
-						<h4>Uriel Hernandez Gopar</h4>
-						<hr>
-
-						<h5>Departamentales</h5>
-					</div>
-				</div>
-			</div>
-
-			<div class="single-team col">
-				<div class="box img3"></div>
-				<div class="box img-text">
-					<div class="text-area text-center">
-						<h4>Brandon Saldivar </h4>
-						<hr>
-
-						<h5>Administración</h5>
-
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
+	<div th:insert="fragments/nuevos-ingresos :: ingresos"></div>
 	<br><br>
 
 	<footer th:insert="fragments/footer :: pie-pagina"></footer>
