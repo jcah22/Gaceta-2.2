@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>D'Villalpando | Nosotros</title>
+
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href='css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <div class="arrow"></div>
+
+<!-- flecha ir arriba   -->
+<button class="btn-scrolltop " id="btn_scrolltop">
+    <i class="bi bi-arrow-up-circle-fill  fs-1"></i>
+</button>
+
+<script>
+    const btn_scrolltop = document.getElementById("btn_scrolltop")
+    btn_scrolltop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    })
+
+    window.onscroll = () => {
+        if (window.scrollY < 1000) {
+            btn_scrolltop.classList.remove("btn-scrolltop-on")
+        } else {
+            btn_scrolltop.classList.add("btn-scrolltop-on")
+        }
+    }
+</script>
+
+
+<nav class="navbar navbar-expand-lg fixed-top sticky-top navbar-dark bg-dark ">
+    <div class="container-fluid">
+        <a class="navbar-brand logo" th:href="@{/}"> <img src="img/logo.svg" alt="Logo del sitio" width="150px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fst-italic" aria-current="page" th:href="@{/}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fs-6 fst-italic" th:href="@{/nosotros}">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fst-italic " th:href="@{/directorio}">Directorio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-6 fst-italic" th:href="@{/premio}">Avisos</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-- carrusel de imagenes del encabezado -->
+<section th:insert="fragments/carrusel :: mi-carrusel"></section>
+
+<div class="container text-center mt-4 font-italic">
+    <h2 class="border-top-0  border-bottom border-end-0 border-start-0 mt-5  border border-primary" id="nosotros">
+        Acerca de Nosotros</h2>
+
+</div>
+
+       <!-- ######################################################################################################################-->
+
+<div class="container text-justify mt-4">
+    <div class="row">
+        <article class="col-md-8">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button  fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                            Historia
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <p class="fst-italic fs-6 ">
+                                <span class="dvilla"> Grupo D´Villalpando </span> es una empresa mexicana altamente
+                                reconocida por su tradición y excelencia
+                                , cuenta con mas de 500 colaboradores y maquinaria de vangurdia, con el unico objetivo
+                                que
+                                es </b><span class="text-success"><b>"la mejora continua"</b></span>.
+                            </p>
+                            <p class="fst-italic fs-6">Tenemos en el mercado en el mercado 40 años, que se han logrado
+                                através
+                                del esfuerzo y dedicación de cada uno
+                                de los integrantes. Esto nos ha permitido adquirir la experiencia necesaria para
+                                expandir
+                                nuestra linea de productos,
+                                ya que en nuestros inicios la cadena de oro y plata fue la punta de lanza para
+                                cristalizar
+                                lo que hoy en dia somos.
+
+                            </p>
+                            <p class="fst-italic fs-6">
+                                Contamos con argollas matrimoniales bajo la marca de Enamoro que se distribuye en
+                                tiendas
+                                departamentales de mayor prestigio,
+                                arracadas, dijes ,esclavas , pulseras,medallas, entre otras.
+                                Toda esta diversidad esta acompañada del diseño y tecnologia en su fabricacion.
+                            </p>
+                            <p class="fst-italic fs-6">
+                                Contamos con 10 sucursales en el interior de la Republica Mexicana y 2 en el area
+                                Metropolitana. Exportamos a paises de Centroamerica, Sudamerica y Europa.
+                            </p>
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            Filosofia
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <p class="fst-italic fs-6">La busqueda de la excelencia, la
+                                integridad moral y el esfuerzo sostenido. elementos que conducen
+                                invariablemente por el camino de la calidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                            Misión
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <p class="fst-italic fs-6 ">
+                                Ser una institución de mejora continua, tanto en la satisfacción de sus clientes , Como
+                                el
+                                desarrollo
+                                integral de su personal , adaptando sistemas y tecnologia de vanguardia en cada uno de
+                                sus
+                                procesos.
+
+                            </p>
+                            <p class="fst-italic fs-6 ">
+                                Nos hemos regido bajo cuatro principios que han guiado nuestro camino <b>"TECNOLOGIA ,
+                                DISEÑO , CALIDAD Y
+                                COLABORACIÓN"</b> , por que sabemos que existe competencia pero ésta es y será con
+                                nosotros
+                                mismos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </article>
+        <aside class="col-md-4">
+            <img class="img-fluid rounded" src="img/trompo.jpg" alt="Nosotros" width="500px">
+
+
+        </aside>
+
+
+    </div>
+</div>
+
+<div class="container mb-5 ">
+    <hr>
+</div>
+<br>
+
+
+<footer th:insert="fragments/footer :: pie-pagina"></footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

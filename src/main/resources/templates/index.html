@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>D'Villalpando | Inicio</title>
+
+
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+	<link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<link href='css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+
+
+
+
+</head>
+
+<body>
+
+	<div class="arrow"></div>
+
+	<!-- flecha ir arriba   -->
+	<button class="btn-scrolltop " id="btn_scrolltop">
+		<i class="bi bi-arrow-up-circle-fill  fs-1"></i>
+	</button>
+
+	<script>
+		const btn_scrolltop = document.getElementById("btn_scrolltop")
+		btn_scrolltop.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+			})
+		})
+
+		window.onscroll = () => {
+			if (window.scrollY < 1000) {
+				btn_scrolltop.classList.remove("btn-scrolltop-on")
+			}
+			else {
+				btn_scrolltop.classList.add("btn-scrolltop-on")
+			}
+		}
+	</script>
+
+
+	<nav class="navbar navbar-expand-lg fixed-top sticky-top navbar-dark bg-dark ">
+		<div class="container-fluid">
+			<a class="navbar-brand logo" th:href="@{/}"> <img src="img/logo.svg" alt="Logo del sitio" width="150px"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link active fs-6 fst-italic" aria-current="page" th:href="@{/}">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fs-6 fst-italic" th:href="@{/nosotros}">Nosotros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fs-6 fst-italic " th:href="@{/directorio}">Directorio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link fs-6 fst-italic" th:href="@{/premio}">Avisos</a>
+					</li>
+
+
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
+	<!-- carrusel de imagenes del encabezado -->
+	<section th:insert="fragments/carrusel :: mi-carrusel"></section>
+
+	<div class="container-fluid">
+
+
+
+		<h1 class="text-center text-danger font-weight-bolder">Importante</h1>
+		<video class="col-lg-12  w-100" height="500px" controls>
+
+			<source th:src="@{/video/covid.mp4}" type="video/mp4">
+		</video>
+	</div>
+
+	<diV class="container">
+
+		<h1
+			class="text-center font-italic text-success border-top-0  border-bottom border-end-0 border-start-0 mt-5  border border-success">
+			Recomendaciones</h1>
+
+
+		<div class="row align-items-center text-center">
+			<div class="col">
+				<img th:src="@{/img/1c.png}" class="img-fluid" alt="">
+				<p>Lavado de manos durante al menos 20 segundos con agua y
+					jabón, en caso de no contar con agua y jabón se pueden usar
+					soluciones alcoholadas al 60%.</p>
+			</div>
+			<div class="col">
+				<img th:src="@{/img/2c.png}" class="img-fluid" alt="">
+				<p>Limpiar (con agua y jabón) y desinfectar (con una solución
+					clorada) las superficies y objetos de uso común.</p>
+			</div>
+			<div class="col">
+				<img th:src="@{/img/3c.png}" class="img-fluid" alt="">
+				<p>Mantener una sana distancia entre personas (de 1.5 metros a 2
+					metros), en caso de no poder mantener esta distancia usar
+					cubreboca, por ejemplo en el transporte público.</p>
+
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-4 text-center text-center">
+				<img th:src="@{/img/4c.png}" class="img-fluid" alt="">
+				<p>Etiqueta respiratoria (cubrir nariz y boca con el ángulo
+					interno del codo o con un pañuelo desechable).</p>
+			</div>
+			<div class="col-4 text-center">
+
+				<img th:src="@{/img/5c.png}" class="img-fluid" alt="">
+				<p>En caso de presentar síntomas compatibles y no formar parte
+					de un grupo vulnerable ni tener indicios de dificultad
+					respiratoria, recuperarse en casa.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- #################################  EFEMERIDES DEL MES###################################################### -->
+
+	<div class="container">
+		<h1
+			class="text-center font-italic text-primary border-top-0  border-bottom border-end-0 border-start-0 mt-5  border border-primary">
+			Efemerides
+			Febrero</h1>
+
+		<div class="row">
+			<div class="col-sm-7">
+				<img th:src="@{/img/candelaria.jpg}" class="img-fluid" alt="">
+			</div>
+			<div class="col-sm-5">
+				<p>
+					<br>
+					<b>2 de Febrero</b>El día de la Candelaria es festejado cada 2 de febrero; se celebra la
+					purificación de la Virgen, se viste al niño Dios y se lleva a la iglesia para ser bendecido.
+					Después, quienes encontraron al niño en la rosca invitan los tamales. Todo esto es muy bello y
+					delicioso, pero ¿Conoces el origen del día de la Candelaria? ¿O por qué los mexicanos comemos
+					tamales en este día? <br><br>
+					De acuerdo con la antropóloga Katia Perdigón, el 2 de febrero -día de la Candelaria- la Virgen solía
+					ser la protagonista del festejo, pues era cuando se cumplían exactamente 40 días después de Navidad,
+					por lo que la Virgen acudió a la Iglesia para ser purificada y dar gracias a Dios por la llegada de
+					Jesús a la Tierra.
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<img th:src="@{/img/constitucion.png}" class="img-fluid" alt="">
+			</div>
+			<div class="col-sm-7">
+				<p>
+					<br>
+					<b>5 de Febrero</b> se celebra el Aniversario de la Constitución Política de los Estados Unidos
+					Mexicanos. El origen de esta fiesta patria se debe a que el 5 de febrero de 1917 se promulgó la
+					versión actual de la Constitución Política, publicada el mismo día en el Diario Oficial de la
+					Federación, misma que entró en vigor en el mes de mayo de aquel año. <br><br><br>
+					El 5 de febrero es comúnmente conocido como el "Día de la Constitución Mexicana", que es la "Carta
+					Magna" del país. Por ser un día festivo, la mayoría de las empresas, escuelas y oficinas de gobierno
+					están cerradas durante el día. En este tiempo, se organizan festivales y desfiles a lo largo y ancho
+					del país, aunque por lo general hay ley seca, quedando prohibida la venta de alcohol, como símbolo
+					de respeto a la lucidez de los autores del mismo documento.
+
+				<p>
+				</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-7">
+				<img th:src="@{/img/f.jpg}" class="img-fluid" alt="">
+			</div>
+			<div class="col-sm-5">
+				<p>
+					<br>
+					<b>10 de Febrero</b>de 1944, se emitió el decreto mediante el cual se establecía que el Arma de
+					Aviación Militar se elevaba al nivel de una Fuerza Armada. Finalmente el 10 de febrero de 1992, por
+					Decreto Presidencial, se estableció oficialmente ese día como el Día de la Fuerza Aérea Mexicana
+					<br><br>
+					La conmemoración de esta fecha tiene como objetivo celebrar la creación de esta fuerza aérea y
+					reflexionar sobre la importancia y el papel de este grupo de profesionales en la nación. Lo anterior
+					debido a que, la Fuerza Aérea Mexicana garantiza desde hace más de un siglo la paz y seguridad de
+					los habitantes del país.
+				</p>
+			</div>
+		</div>
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<img th:src="@{/img/valentin.jpg}" class="img-fluid" alt="">
+			</div>
+			<div class="col-sm-7">
+				<p>
+					<br>
+					<b>14 de Febrero</b>Cada 14 de febrero se celebra en varios países del mundo con gran entusiasmo y
+					alegría el Día de San Valentín. Un día muy especial para muchos, donde se resalta la importancia del
+					amor y que, pese a la creencia de su origen comercial, viene de mucho antes. Concretamente del siglo
+					III en Roma y la muerte de Valentín, un sacerdote sentenciado por celebrar en secreto matrimonios de
+					jóvenes enamorados. <br>
+
+
+
+				<p>
+				</p>
+			</div>
+		</div>
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-7 col-md-7 col-lg-7 ">
+				<img th:src="@{/img/ejemex.jpg}" class="img-fluid" alt="">
+			</div>
+			<div class="col-sm-5 col-md-5 col-lg-5">
+				<p>
+					<br>
+					<b>19 de Febrero</b>
+					El origen del actual Ejército Mexicano surge con el XXII Congreso Constitucional Libre,
+					Independiente y Soberano del Estado de Coahuila que en su decreto 1421 del 19 de febrero de 1913,
+					desconoció al General Victoriano Huerta y dio facultades a Venustiano Carranza, Gobernador del
+					Estado, para crear una fuerza armada y restablecer el orden constitucional.
+					<br><br>
+					El 26 de marzo del mismo año, fue proclamado el Plan de Guadalupe, documento que le dio nombre al
+					“Ejército Constitucionalista” y una vez que se promulgó la Constitución de 1917, adoptó los nombres
+					de Ejército Nacional Federal y Permanente y más tarde Ejército Mexicano.
+				</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-5">
+				<img th:src="@{/img/bandera.jpg}" class="img-fluid" alt="">
+			</div>
+			<div class="col-sm-7">
+				<p>
+					<br>
+					<b>24 de Febrero</b> se celebra a uno de los símbolos patrios más queridos por los mexicanos, la
+					Bandera Nacional Mexicana; símbolo de Libertad, Justicia y Amor a la Patria. <br>
+
+					En el Artículo 10 de la Ley sobre el Escudo, la Bandera y el Himno Nacionales, se establece esta
+					fecha solemnemente como el Día de la Bandera Nacional; en la cual, las Autoridades e Instituciones
+					realizarán actos cívicos en conmemoración, veneración y exaltación a la Bandera.
+
+				<p>
+				</p>
+			</div>
+		</div>
+	
+
+
+
+	</div>
+	<br>
+
+	<div class="container">
+		<h2 style="color: #bd2130;"
+			class="text-center font-italic  border-top-0  border-bottom border-end-0 border-start-0 mt-5  border border-dark font-weight-bold">
+			Nuevos
+			Ingresos</h2>
+
+		<div id="ingresos" class="wrapper row align-items-center text-center ">
+
+			<div class="single-team col">
+				<div class="box img1"></div>
+				<div class="box img-text">
+					<div class="text-area text-center">
+						<h4>Lizbet Crescencio Sanchez</h4>
+						<hr>
+
+						<h5>Recepción</h5>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="single-team col">
+				<div class="box img2"></div>
+				<div class="box img-text">
+					<div class="text-area text-center">
+						<h4>Uriel Hernandez Gopar</h4>
+						<hr>
+
+						<h5>Departamentales</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-team col">
+				<div class="box img3"></div>
+				<div class="box img-text">
+					<div class="text-area text-center">
+						<h4>Brandon Saldivar </h4>
+						<hr>
+
+						<h5>Administración</h5>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<br><br>
+
+	<footer th:insert="fragments/footer :: pie-pagina"></footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

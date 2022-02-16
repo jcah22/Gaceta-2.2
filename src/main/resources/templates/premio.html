@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>D'Villalpando | Avisos</title>
+
+
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<link href='css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+	<div class="arrow"></div>
+
+
+<!-- flecha ir arriba   -->
+<button class="btn-scrolltop " id="btn_scrolltop">
+	<i class="bi bi-arrow-up-circle-fill  fs-1" ></i>
+</button>
+
+<script>
+	const btn_scrolltop = document.getElementById("btn_scrolltop")
+	btn_scrolltop.addEventListener('click',() => {
+		window.scrollTo({
+			top:0,
+			behavior:"smooth"
+		})
+	})
+
+	window.onscroll = () =>{
+		if(window.scrollY < 1000 ){
+			btn_scrolltop.classList.remove("btn-scrolltop-on")
+		}
+		else{
+			btn_scrolltop.classList.add("btn-scrolltop-on")
+		}
+	}
+</script>
+
+
+<nav class="navbar navbar-expand-lg fixed-top sticky-top navbar-dark bg-dark  ">
+	<div class="container-fluid">
+		<a class="navbar-brand logo"  th:href="@{/}" > <img src="img/logo.svg" alt="Logo del sitio" width="150px"></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 ">
+				<li class="nav-item">
+					<a class="nav-link fs-6 fst-italic" aria-current="page" th:href="@{/}">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link  fs-6 fst-italic" th:href="@{/nosotros}">Nosotros</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link fs-6 fst-italic" th:href="@{/directorio}">Directorio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active fs-6 fst-italic" th:href="@{/premio}">Avisos</a>
+				</li>
+
+
+			</ul>
+
+		</div>
+	</div>
+</nav>
+	<!-- carrusel de imagenes del encabezado -->
+	<section th:insert="fragments/carrusel :: mi-carrusel"></section>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<img class="d-block w-100" th:src="@{/img/atencion.png}">
+			<br>
+			<hr>
+		
+	</div>
+
+
+	<footer th:insert="fragments/footer :: pie-pagina"></footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>
